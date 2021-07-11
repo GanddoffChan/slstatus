@@ -68,7 +68,9 @@ static const struct arg args[] = {
     { run_command,          "[TEM 🌡️ %s]  ",         "sensors | grep Package | sed 's/°C.*/ °C/;s/.*+//'" },
     { cpu_perc,             "[CPU  %s%%]  ",       NULL },
     { ram_perc,             "[RAM  %s%%]  ",       NULL },
-    { battery_perc,         "[BAT 🔋 %s%%] | ",     "BAT0"},
+    { run_command,          "[BAT 🔋 ",             NULL },
+    { battery_perc,         "%s%%",                 "BAT0"},
+    { battery_state,        "%sε] | ",              "BAT0"},
     { datetime,             "%s",                   "(%a) %e %B %Y %H.%M.%S" },
 };
 
