@@ -64,13 +64,12 @@ static const char unknown_str[] = "n/a";
 static const struct arg args[] = {
     /* function             format                  argument */
     { netspeed_rx,          "🔻 %sB/s  ",           "wlo1" },
-    { run_command,          " %s | ",              "pamixer --get-volume-human" },
-    { run_command,          "[TEM 🌡️ %s]  ",         "sensors | grep Package | sed 's/°C.*/ °C/;s/.*+//'" },
-    { cpu_perc,             "[CPU  %s%%]  ",       NULL },
-    { ram_perc,             "[RAM  %s%%]  ",       NULL },
-    { run_command,          "[BAT 🔋 ",             NULL },
-    { battery_perc,         "%s%%",                 "BAT0"},
-    { battery_state,        "%sε] | ",              "BAT0"},
+    { run_command,          "🔉 %s  ",              "pamixer --get-volume-human" },
+    { battery_perc,         "🔋 %s%%",              "BAT0"},
+    { battery_state,        "%sε | ",               "BAT0"},
+    { run_command,          "[TEM %s]  ",           "sensors | grep Package | sed 's/°C.*/ °C/;s/.*+//'" },
+    { cpu_perc,             "[CPU %s%%]  ",         NULL },
+    { ram_perc,             "[RAM %s%%] | ",        NULL },
     { datetime,             "%s",                   "(%a) %e %B %Y %H.%M.%S" },
 };
 
